@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+    <meta charset=utf-8 />
+    <title>JS Bin</title>
+    <style>
+    body {
+    background-color: #444444;
+    }
+    #radar{
+    position:relative;
+    width:321px;
+    height:321px;
+    background:#222 url(http://i.stack.imgur.com/vY6Tl.png);
+    border-radius:320px;
+    }
+    #rad{
+    position:absolute;
+    width:321px;
+    height:321px; background:url(http://i.stack.imgur.com/fbgUD.png);
+    }
+    </style>
+    <script>
+    $(function() {
+      var $rad = $('#rad'),
+      deg = 0;
+    
+      (function rotate() {    
+        $rad.css({ transform: 'rotate(' + deg + 'deg)'});
+        setTimeout(function() {
+          ++deg;
+          rotate();
+        }, 25);
+      })();
+    
+    });
+    </script>
+  </head>
+  <body>
+    <div id="radar">
+      <div id="rad"></div>
+    </div>
+  </body>
+</html>
+
